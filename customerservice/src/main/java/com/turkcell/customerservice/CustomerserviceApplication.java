@@ -10,4 +10,7 @@ public class CustomerserviceApplication {
 		SpringApplication.run(CustomerserviceApplication.class, args);
 	}
 
+	// CustomerService
+	// DB Tasarımı
+	// docker-compose'da CustomerService için gerekli konfigürasyonlar.
 }
