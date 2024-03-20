@@ -1,5 +1,6 @@
 package com.turkcell.customerservice.services.concretes;
 
+import com.turkcell.customerservice.clients.OrderServiceClient;
 import com.turkcell.customerservice.repositories.CustomerRepository;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
 import com.turkcell.customerservice.services.dtos.requests.SearchCustomerRequest;
@@ -15,14 +16,19 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
     private final WebClient.Builder webClient;
+    private final OrderServiceClient orderServiceClient;
     @Override
     public List<SearchCustomerResponse> search(SearchCustomerRequest request) {
-        var result = webClient.build()
+        /*var result = webClient.build()
                 .get()
                 .uri("http://localhost:8081/api/orders?orderId="+request.getOrderNumber())
                 .retrieve()
                 .bodyToMono(Integer.class)
                 .block(); // async durumu sync hale getiren fonk.
+        System.out.println("Order servisten gelen sonuç:"+result);
+        */
+
+        int result = orderServiceClient.getCustomerIdByOrderId(request.getOrderNumber());
         System.out.println("Order servisten gelen sonuç:"+result);
         return customerRepository.search(request);
     }
