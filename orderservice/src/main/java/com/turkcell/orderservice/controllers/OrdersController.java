@@ -14,6 +14,11 @@ public class OrdersController
     public int getCustomerIdByOrderId(@RequestParam String orderId)
     {
         //TODO: Mongodb'e gidip query ile çek.
+        System.out.println("İşlem yapılıyor..");
+        try{
+            Thread.sleep(10000);
+        }
+        catch(Exception e){}
         return 10;
     }
 }
