@@ -19,3 +19,4 @@ public class CustomerserviceApplication {
 	// DB Tasarımı
 	// docker-compose'da CustomerService için gerekli konfigürasyonlar.
 }
+// 8:55

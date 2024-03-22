@@ -1,0 +1,49 @@
+services:
+  discovery-server:
+    build: ./discoveryserver
+    ports:
+      - "8888:8888"
+  customer-service:
+    build: ./customerservice
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/crm
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8888/eureka/
+    depends_on:
+      - postgres
+      - discovery-server
+  order-service:
+    build: ./orderservice
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://root:root@mongodb:27017/orderservice?authSource=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8888/eureka/
+    depends_on:
+      - mongodb
+      - discovery-server
+  mongodb:
+    image: mongo
+    ports:
+      - "27018:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - mongo-volume:/data/db
+  postgres:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=test
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data
+
+
+volumes:
+  postgresql-volume:
+    name: postgresql-volume
+  mongo-volume:
+    name: mongo-volume
