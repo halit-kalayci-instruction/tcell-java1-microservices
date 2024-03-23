@@ -3,6 +3,19 @@ services:
     build: ./discoveryserver
     ports:
       - "8888:8888"
+    networks:
+      - common
+  gateway-server:
+    build: ./gatewayserver
+    ports:
+      - "8001:8001"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8888/eureka/
+      - EUREKA_URL=http://discovery-server:8888
+    depends_on:
+      - discovery-server
+    networks:
+      - common
   customer-service:
     build: ./customerservice
     ports:
@@ -13,6 +26,8 @@ services:
     depends_on:
       - postgres
       - discovery-server
+    networks:
+      - common
   order-service:
     build: ./orderservice
     ports:
@@ -23,6 +38,8 @@ services:
     depends_on:
       - mongodb
       - discovery-server
+    networks:
+      - common
   mongodb:
     image: mongo
     ports:
@@ -32,6 +49,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=root
     volumes:
       - mongo-volume:/data/db
+    networks:
+      - common
   postgres:
     image: postgres
     ports:
@@ -40,6 +59,8 @@ services:
       - POSTGRES_PASSWORD=test
     volumes:
       - postgresql-volume:/var/lib/postgresql/data
+    networks:
+      - common
 
 
 volumes:
@@ -47,3 +68,7 @@ volumes:
     name: postgresql-volume
   mongo-volume:
     name: mongo-volume
+
+networks:
+  common:
+    driver: bridge
