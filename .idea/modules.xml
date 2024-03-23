@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/customerservice/customerservice.iml" filepath="$PROJECT_DIR$/customerservice/customerservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/discoveryserver/discoveryserver.iml" filepath="$PROJECT_DIR$/discoveryserver/discoveryserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gatewayserver/gatewayserver.iml" filepath="$PROJECT_DIR$/gatewayserver/gatewayserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/invoiceservice/invoiceservice.iml" filepath="$PROJECT_DIR$/invoiceservice/invoiceservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/orderservice/orderservice.iml" filepath="$PROJECT_DIR$/orderservice/orderservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/productservice/productservice.iml" filepath="$PROJECT_DIR$/productservice/productservice.iml" />

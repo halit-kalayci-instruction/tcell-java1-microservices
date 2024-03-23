@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/customerservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discoveryserver/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discoveryserver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gatewayserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gatewayserver/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/invoiceservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/invoiceservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orderservice/src/main/java" charset="UTF-8" />

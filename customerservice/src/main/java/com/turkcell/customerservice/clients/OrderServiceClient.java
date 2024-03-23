@@ -11,3 +11,7 @@ public interface OrderServiceClient
     @GetMapping("/api/orders")
     int getCustomerIdByOrderId(@RequestParam("orderId") String orderId);
 }
+// Projeye docker-compose entegrasyonu
+// Tüm sistemlerin service-discovery ile çalışması
+// API GATEWAY araştırma
+// 9:30-10:30

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/orders")
+@RequestMapping("/api/orders")
 public class OrdersController
 {
     @GetMapping
