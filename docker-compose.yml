@@ -16,16 +16,25 @@ services:
       - discovery-server
     networks:
       - common
+  config-server:
+    build: ./configserver
+    ports:
+      - "8079:8079"
+    networks:
+      - common
   customer-service:
     build: ./customerservice
     ports:
       - "8083:8083"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/crm
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8888/eureka/
+      - SPRING_CLOUD_CONFIG_PROFILE=prod
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_CONFIG_PROFILE=prod
+      - CONFIGURL=http://config-server:8079
     depends_on:
       - postgres
       - discovery-server
+      - config-server
     networks:
       - common
   order-service:
@@ -72,3 +81,5 @@ volumes:
 networks:
   common:
     driver: bridge
+
+    # 3:50
