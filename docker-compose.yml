@@ -28,9 +28,11 @@ services:
       - "8083:8083"
     environment:
       - SPRING_CLOUD_CONFIG_PROFILE=prod
-      - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_CONFIG_PROFILE=prod
       - CONFIGURL=http://config-server:8079
+    # kubernetes
+    restart: on-failure # her hata aldığında
+    #restart: unless-stopped # kullanıcı dışı bir şekilde durduysa
+    #restart: always # kullanıcı dahil herhangi bir şekilde durduysa
     depends_on:
       - postgres
       - discovery-server
@@ -82,4 +84,3 @@ networks:
   common:
     driver: bridge
 
-    # 3:50
