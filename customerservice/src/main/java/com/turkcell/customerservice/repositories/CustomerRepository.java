@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
@@ -17,6 +18,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
             " from Customer c" +
             " where ( :#{#request.getNationalityId()} <= 0 or c.nationalityId= :#{#request.getNationalityId()})" +
             " and ( :#{#request.getCustomerId()} is null or c.customerId= :#{#request.getCustomerId()})")
-    // Parameter SPEL Expression (Spring Expression)
     List<SearchCustomerResponse> search(SearchCustomerRequest request);
+
+    Optional<Customer> findByNationalityId(int nationalityId);
 }
