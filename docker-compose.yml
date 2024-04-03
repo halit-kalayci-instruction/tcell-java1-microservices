@@ -83,5 +83,3 @@ volumes:
 networks:
   common:
     driver: bridge
-
-# 9:15

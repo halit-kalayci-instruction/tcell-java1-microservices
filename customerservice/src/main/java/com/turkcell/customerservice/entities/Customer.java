@@ -33,7 +33,6 @@ public class Customer
 
     @Column(name="first_name")
     private String firstName;
-    // Halit Enes
 
     @Column(name="last_name")
     private String lastName;
