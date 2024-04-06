@@ -38,7 +38,10 @@ public class JwtService {
         Date expirationDate = extractExpiration(token);
         return userDetails.getUsername().equals(username) && !expirationDate.before(new Date());
     }
-
+    // Ortak bir maven kütüphane projesi kodlayıp
+    // bunu local repository içerisine pushlamak
+    // ve tüm projelerde dep. olarak kullanabilmek.
+    // TODO: Tatilden sonra implemente et.
     private Date extractExpiration(String token) {
         Claims claims = Jwts
                 .parser()
