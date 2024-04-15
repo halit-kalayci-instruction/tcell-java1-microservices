@@ -40,8 +40,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             if(jwtService.validateToken(jwt, user))
             {
                 // Spring Security'e giriş yapıldığını bildirmek..
-                // TODO: Implement roles.
-                UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(user, null, null);
+                UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
                 token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                 SecurityContextHolder.getContext().setAuthentication(token);

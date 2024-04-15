@@ -1,7 +1,6 @@
 package com.turkcell.authservice.controllers;
 
 import com.turkcell.authservice.services.abstracts.AuthService;
-import com.turkcell.authservice.services.abstracts.UserService;
 import com.turkcell.authservice.services.dtos.requests.LoginRequest;
 import com.turkcell.authservice.services.dtos.requests.RegisterRequest;
 import lombok.RequiredArgsConstructor;

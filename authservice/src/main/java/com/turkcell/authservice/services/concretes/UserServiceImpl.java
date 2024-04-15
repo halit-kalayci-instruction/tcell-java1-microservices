@@ -34,7 +34,4 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(user);
     }
-    // TODO: JWT
-
-    // 10:05
 }
