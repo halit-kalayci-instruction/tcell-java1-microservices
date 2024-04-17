@@ -1,13 +1,11 @@
 package com.turkcell.authservice.services.concretes;
 
-import com.turkcell.authservice.entities.User;
-import com.turkcell.authservice.repositories.UserRepository;
+import com.halitkalayci.entities.User;
+import com.halitkalayci.repositories.UserRepository;
 import com.turkcell.authservice.services.abstracts.UserService;
-import com.turkcell.authservice.services.dtos.requests.LoginRequest;
 import com.turkcell.authservice.services.dtos.requests.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;

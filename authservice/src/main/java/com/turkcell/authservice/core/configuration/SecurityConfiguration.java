@@ -1,7 +1,7 @@
 package com.turkcell.authservice.core.configuration;
 
-import com.turkcell.authservice.core.filters.JwtAuthFilter;
-import com.turkcell.authservice.services.abstracts.UserService;
+import com.halitkalayci.filters.JwtAuthFilter;
+import com.halitkalayci.services.abstracts.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -45,6 +45,7 @@ public class SecurityConfiguration {
                 // .httpBasic(AbstractHttpConfigurer::disable); vs... zincirin diğer halkaları..
         return http.build();
     }
+    // 8:15
     @Bean
     public AuthenticationProvider authenticationProvider()
     {
