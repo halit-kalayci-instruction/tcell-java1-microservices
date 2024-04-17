@@ -24,4 +24,3 @@ public class AuthserviceApplication {
 	}
 
 }
-// 7:15
