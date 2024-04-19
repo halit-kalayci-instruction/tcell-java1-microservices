@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/api/v1/orders")
 public class OrdersController
 {
     @GetMapping
@@ -15,10 +15,10 @@ public class OrdersController
     {
         //TODO: Mongodb'e gidip query ile çek.
         System.out.println("İşlem yapılıyor..");
-        try{
+        /*try{
             Thread.sleep(10000);
         }
-        catch(Exception e){}
+        catch(Exception e){}*/
         return 10;
     }
 }
