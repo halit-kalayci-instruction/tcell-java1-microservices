@@ -1,14 +1,15 @@
 package com.turkcell.authservice.services.concretes;
 
 import com.halitkalayci.jwt.JwtService;
-import com.halitkalayci.services.abstracts.UserService;
-import com.halitkalayci.services.dtos.requests.RegisterRequest;
 import com.turkcell.authservice.services.abstracts.AuthService;
+import com.turkcell.authservice.services.abstracts.UserService;
 import com.turkcell.authservice.services.dtos.requests.LoginRequest;
+import com.turkcell.authservice.services.dtos.requests.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,6 @@ public class AuthServiceImpl implements AuthService {
 
       UserDetails user = userService.loadUserByUsername(request.getEmail());
 
-      return jwtService.generateToken(user.getUsername());
+      return jwtService.generateToken(user.getUsername(), user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
     }
 }
