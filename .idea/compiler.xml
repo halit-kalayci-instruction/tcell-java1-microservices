@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gatewayserver" />
+        <module name="common" />
         <module name="authservice" />
         <module name="productservice" />
         <module name="invoiceservice" />
@@ -19,6 +20,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authservice" target="17" />
+      <module name="common" target="17" />
       <module name="configserver" target="17" />
       <module name="customerservice" target="17" />
       <module name="discoveryserver" target="17" />

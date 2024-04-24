@@ -108,3 +108,9 @@ volumes:
 networks:
   common:
     driver: bridge
+
+
+# Volume Bind Mount
+# Remote Repository Push
+# SRS Kafka ?
+# 7:45

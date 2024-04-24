@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/gatewayserver/pom.xml" />
         <option value="$PROJECT_DIR$/configserver/pom.xml" />
         <option value="$PROJECT_DIR$/authservice/pom.xml" />
+        <option value="$PROJECT_DIR$/common/pom.xml" />
       </list>
     </option>
   </component>
