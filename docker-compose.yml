@@ -69,7 +69,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=test
     volumes:
-      - postgresql-volume:/var/lib/postgresql/data
+      - C:/PostgreSQL:/var/lib/postgresql/data  # local dosyaların kullanılması.
     networks:
       - common
   zookeeper:
