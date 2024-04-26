@@ -38,6 +38,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.halitkalayci</groupId>
+			<artifactId>core</artifactId>
+			<version>1.2.7</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
@@ -86,6 +92,14 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>Github Packages</name>
+			<url>https://maven.pkg.github.com/halit-kalayci-instruction/tcell-microservices-core/</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
