@@ -27,8 +27,3 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/tcell1-configserver ./configserver
           docker push ${{ secrets.DOCKER_USERNAME }}/tcell1-configserver
-
-      - name: Build and push customer-service image
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/tcell1-customerservice ./customerservice
-          docker push ${{ secrets.DOCKER_USERNAME }}/tcell1-customerservice
