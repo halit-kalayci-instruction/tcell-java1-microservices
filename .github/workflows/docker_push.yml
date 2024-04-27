@@ -27,3 +27,22 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/tcell1-configserver ./configserver
           docker push ${{ secrets.DOCKER_USERNAME }}/tcell1-configserver
+
+      - name: Build and push customer-service image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/tcell1-customerservice ./customerservice
+          docker push ${{ secrets.DOCKER_USERNAME }}/tcell1-customerservice
+          
+
+    # örn: bir linux makinada containerları yeniden güncel imagelar ile ayağa kaldırmak.
+     # - name: Deploy and Restart Docker Containers
+     #   uses: appleboy/ssh-action@v0.1.4
+     #   with:
+     #     host: halitkalayci.com
+     #     username: root
+      #    key: abc
+     #     script: |
+     #       docker pull ${{ secrets.DOCKER_USERNAME }}/tcell1-customerservice
+      #      docker stop tcell1-customerservice
+     #       docker rm tcell1-customerservice
+      #      docker run -d --name tcell1-customerservice -p 8080:8080
