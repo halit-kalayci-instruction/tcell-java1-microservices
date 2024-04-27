@@ -40,7 +40,7 @@ jobs:
      #   with:
      #     host: halitkalayci.com
      #     username: root
-      #    key: abc
+      #    key: ***
      #     script: |
      #       docker pull ${{ secrets.DOCKER_USERNAME }}/tcell1-customerservice
       #      docker stop tcell1-customerservice
