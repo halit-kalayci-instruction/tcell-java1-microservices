@@ -23,7 +23,11 @@ services:
     networks:
       - common
   customer-service:
-    build: ./customerservice
+    build:
+      context: ./customerservice
+      args:
+        GITHUB_USERNAME: ${GITHUB_USERNAME}
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
     ports:
       - "8083:8083"
     environment:
